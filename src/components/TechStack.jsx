@@ -122,33 +122,15 @@ export const TechStack = ({ technologies, githubUsername = 'arpitm544', onUpdate
           <div className="heatmap-title-group">
             <TechIcon name="github" size={16} />
             <span className="heatmap-heading">GitHub Contributions</span>
-            <span className="heatmap-user-tag">@{username}</span>
-          </div>
-
-          {isEditingUsername ? (
-            <form onSubmit={handleSyncSubmit} className="heatmap-sync-form">
-              <input
-                type="text"
-                placeholder="Enter GitHub username"
-                value={inputUsername}
-                onChange={(e) => setInputUsername(e.target.value)}
-                className="heatmap-username-input"
-                autoFocus
-              />
-              <button type="submit" className="heatmap-sync-btn" title="Sync contributions">
-                <Check size={14} />
-              </button>
-            </form>
-          ) : (
-            <button 
-              onClick={() => setIsEditingUsername(true)} 
-              className="heatmap-change-user-btn"
-              title="Change GitHub username"
+            <a 
+              href={`https://github.com/${username}`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="heatmap-user-tag"
             >
-              <RefreshCw size={13} className={loading ? 'animate-spin' : ''} />
-              <span>Sync Handle</span>
-            </button>
-          )}
+              @{username}
+            </a>
+          </div>
         </div>
 
         {loading ? (

@@ -35,6 +35,11 @@ export function App() {
     localStorage.setItem('portfolio_custom_data', JSON.stringify(newData));
   };
 
+  const isOwnerMode = typeof window !== 'undefined' && 
+    (new URLSearchParams(window.location.search).get('admin') === 'true' || 
+     new URLSearchParams(window.location.search).get('edit') === 'true' ||
+     localStorage.getItem('portfolio_owner_mode') === 'true');
+
   return (
     <div className="app-container">
       <Navbar 
@@ -50,16 +55,7 @@ export function App() {
         
         <TechStack 
           technologies={data.technologies} 
-          githubUsername={data.personalInfo.githubUsername || data.personalInfo.handle || 'arpitmaurya'} 
-          onUpdateUsername={(newUsername) => {
-            handleDataUpdate({
-              ...data,
-              personalInfo: {
-                ...data.personalInfo,
-                githubUsername: newUsername
-              }
-            });
-          }}
+          githubUsername={data.personalInfo.githubUsername || data.personalInfo.handle || 'arpitm544'} 
         />
         
         <Projects projects={data.projects} />
@@ -71,11 +67,13 @@ export function App() {
 
       <Footer handle={data.personalInfo.handle} />
 
-      {/* Floating Customizer Drawer */}
-      <ResumeSyncModal 
-        portfolioData={data} 
-        setPortfolioData={handleDataUpdate} 
-      />
+      {/* Floating Customizer Drawer - only visible to you with ?admin=true */}
+      {isOwnerMode && (
+        <ResumeSyncModal 
+          portfolioData={data} 
+          setPortfolioData={handleDataUpdate} 
+        />
+      )}
     </div>
   );
 }
