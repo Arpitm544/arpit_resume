@@ -42,7 +42,7 @@ export const portfolioData = {
       email: "arpitmaurya840@gmail.com",
       phone: "tel:+919415829278",
       github: "https://github.com/arpitm544",
-      linkedin: "https://linkedin.com"
+      linkedin: "https://www.linkedin.com/in/arpit-maurya-741996313/?isSelfProfile=true"
     }
   },
 
@@ -107,7 +107,7 @@ export const portfolioData = {
       title: "CodePilot — AI Code Review System",
       techBadge: "React, Node.js, Express.js, LLM API",
       links: [
-        { label: "GitHub", url: "https://github.com" },
+        { label: "GitHub", url: "https://github.com/Arpitm544/Ai-code-.git" },
         { label: "Live Demo", url: "https://github.com" }
       ],
       points: [
@@ -124,8 +124,8 @@ export const portfolioData = {
       title: "TaskNest — Task Management Platform",
       techBadge: "React, Node.js, Golang, PostgreSQL, AWS",
       links: [
-        { label: "GitHub", url: "https://github.com" },
-        { label: "Live Demo", url: "https://github.com" }
+        { label: "GitHub", url: "https://github.com/Arpitm544/TaskNest.git" },
+        { label: "Live Demo", url: "https://www.web.tasknest.com/" }
       ],
       points: [
         "Designed PostgreSQL tables for users, tasks and teams to handle assignments and team collaboration.",
@@ -142,8 +142,8 @@ export const portfolioData = {
       title: "ChatUI — Real-Time Chat Application",
       techBadge: "React, Node.js, MongoDB",
       links: [
-        { label: "GitHub", url: "https://github.com" },
-        { label: "Live Demo", url: "https://github.com" }
+        { label: "GitHub", url: "https://github.com/Arpitm544/ChatUI.git" },
+        { label: "Live Demo", url: "https://chatclone-xi.vercel.app/" }
       ],
       points: [
         "Built real-time chat using Socket.io with React frontend and Node.js backend.",
